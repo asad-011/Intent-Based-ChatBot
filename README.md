@@ -133,6 +133,12 @@ http://127.0.0.1:5000/
 
 ---
 
+## 👨‍💻 Live Deployment
+
+(https://intent-based-chatbot-poof.onrender.com)
+
+---
+
 ## 👨‍💻 Author
 
 Developed as a beginner-friendly **Flask + Machine Learning project**.
