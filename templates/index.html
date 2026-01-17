@@ -8,7 +8,8 @@
       href="{{ url_for('static', filename='style.css') }}"
     />
   </head>
-  <body>
+  <body style="background-image: url('{{ url_for('static', filename='bg.jpg') }}');">
+
     <div class="chat-container">
       <div class="chat-header">🤖 NLP Chatbot</div>
 
@@ -53,4 +54,5 @@
     </script>
   </body>
 </html>
+
 
