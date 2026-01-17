@@ -16,84 +16,152 @@ def clean_text(text):
 
 training_sentences = [
 
-    "hello", "hi", "hey",
-    "hello there", "hi there",
-    "good morning", "good evening", "good afternoon",
-    "hii", "heyy",
+    # ===== GREETING =====
+    "hello", "hi", "hey", "hey there", "hello there", "hi there",
+    "good morning", "good afternoon", "good evening",
+    "hii", "heyy", "yo", "what's up", "wassup",
+    "howdy", "hiya", "hello friend", "hi bot",
+    "hey bot", "hey assistant", "hello assistant",
 
-    "bye", "goodbye", "see you",
-    "see you later", "talk to you later",
-    "exit", "quit",
+    # ===== GOODBYE =====
+    "bye", "goodbye", "see you", "see ya", "see you later",
+    "talk to you later", "catch you later",
+    "exit", "quit", "close", "stop",
+    "bye bye", "good night", "farewell",
+    "see you soon", "i am leaving", "i have to go",
 
-    "how are you", "how r u",
-    "how are you doing", "how is it going",
-    "are you fine",
+    # ===== STATUS =====
+    "how are you", "how r u", "how are you doing",
+    "how is it going", "how's it going",
+    "are you fine", "are you okay",
+    "how do you feel", "how are things",
+    "everything good", "you good",
+    "what's going on",
 
+    # ===== NAME =====
     "what is your name", "who are you",
     "tell me your name", "what should i call you",
+    "do you have a name", "your name please",
+    "what are you called", "what do people call you",
+    "may i know your name",
 
-    "tell me a joke", "joke",
-    "make me laugh", "say something funny",
+    # ===== JOKE =====
+    "tell me a joke", "joke", "make me laugh",
+    "say something funny", "crack a joke",
+    "tell a funny joke", "do you know any jokes",
+    "joke please", "funny joke",
+    "entertain me", "make me smile",
 
-    "time", "current time",
-    "what is the time", "time now",
-    "tell me the time",
+    # ===== TIME =====
+    "time", "current time", "what is the time",
+    "time now", "tell me the time",
+    "can you tell me the time",
+    "what time is it", "give me the time",
+    "current time please",
 
-    "date", "today date",
-    "what is the date", "today's date",
-    "tell me today's date",
+    # ===== DATE =====
+    "date", "today date", "what is the date",
+    "today's date", "tell me today's date",
+    "what day is today", "current date",
+    "today's day and date",
 
-    "help", "what can you do",
-    "how can you help me",
-    "what are your features",
+    # ===== HELP =====
+    "help", "help me", "what can you do",
+    "how can you help me", "what are your features",
+    "what do you do", "what can you help with",
+    "how do you work", "what is your purpose",
+    "tell me what you can do",
+    "assist me", "i need help",
 
-    "thanks", "thank you",
-    "thx", "thanks a lot",
+    # ===== THANKS =====
+    "thanks", "thank you", "thx", "thanks a lot",
+    "thank you so much", "many thanks",
+    "appreciate it", "thanks buddy",
+    "thanks assistant", "thank you very much",
 
-    "ok", "okay", "cool",
-    "nice", "great"
+    # ===== CONFIRMATION =====
+    "ok", "okay", "cool", "nice", "great",
+    "alright", "sure", "fine", "sounds good",
+    "got it", "understood", "perfect",
+    "awesome", "excellent", "yep", "yes"
 ]
+
 
 training_labels = [
 
+    # GREETING
+    "greeting","greeting","greeting","greeting","greeting","greeting",
     "greeting","greeting","greeting",
-    "greeting","greeting",
-    "greeting","greeting","greeting",
+    "greeting","greeting","greeting","greeting","greeting",
+    "greeting","greeting","greeting","greeting","greeting",
     "greeting","greeting",
 
+    # BYE
+    "bye","bye","bye","bye","bye",
+    "bye","bye",
+    "bye","bye","bye","bye",
     "bye","bye","bye",
-    "bye","bye",
-    "bye","bye",
+    "bye","bye","bye",
 
+    # STATUS
+    "status","status","status",
+    "status","status",
+    "status","status",
     "status","status",
     "status","status",
     "status",
 
+    # NAME
     "name","name",
     "name","name",
+    "name","name",
+    "name","name",
+    "name",
 
+    # JOKE
+    "joke","joke","joke",
+    "joke","joke",
+    "joke","joke",
     "joke","joke",
     "joke","joke",
 
+    # TIME
+    "time","time","time",
     "time","time",
+    "time",
     "time","time",
     "time",
 
+    # DATE
+    "date","date","date",
     "date","date",
     "date","date",
     "date",
 
+    # HELP
+    "help","help","help",
     "help","help",
     "help","help",
+    "help","help",
+    "help",
+    "help","help",
 
+    # THANKS
+    "thanks","thanks","thanks","thanks",
     "thanks","thanks",
     "thanks","thanks",
+    "thanks","thanks",
 
+    # CONFIRMATION
+    "confirmation","confirmation","confirmation","confirmation","confirmation",
+    "confirmation","confirmation","confirmation","confirmation",
     "confirmation","confirmation","confirmation",
-    "confirmation","confirmation"
+    "confirmation","confirmation","confirmation","confirmation"
 ]
 
 
+
+training_sentences = [clean_text(s) for s in training_sentences]
 
 vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(training_sentences)
