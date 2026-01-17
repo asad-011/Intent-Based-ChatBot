@@ -133,9 +133,9 @@ http://127.0.0.1:5000/
 
 ---
 
-## 👨‍💻 Live Deployment
+## 🌍 Live Deployment
 
-(https://intent-based-chatbot-poof.onrender.com)
+🔗 https://intent-based-chatbot-poof.onrender.com
 
 ---
 
